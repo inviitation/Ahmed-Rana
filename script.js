@@ -28,6 +28,7 @@ intro.onclick = () => {
   langBtn.style.display = "block";
 };
 
+/* 🎵 الصوت */
 function fadeInMusic(){
   music.volume = 0;
   music.play().catch(()=>{});
@@ -56,6 +57,7 @@ btn.onclick=()=>{
   }
 };
 
+/* 🌐 تغيير اللغة (الحل الصح هنا) */
 langBtn.onclick = () => {
   currentLang = currentLang === "en" ? "ar" : "en";
 
@@ -66,6 +68,10 @@ langBtn.onclick = () => {
 
     setTimeout(() => {
       el.innerHTML = el.getAttribute("data-" + currentLang);
+
+      // 👇 أهم سطر (حل المشكلة)
+      el.style.direction = currentLang === "ar" ? "rtl" : "ltr";
+
       el.classList.remove("fade");
     }, 150);
   });
@@ -73,6 +79,7 @@ langBtn.onclick = () => {
   langBtn.textContent = currentLang === "en" ? "AR" : "EN";
 };
 
+/* ⏳ العداد */
 const t=new Date("May 14, 2026 20:00").getTime();
 
 setInterval(()=>{
@@ -89,7 +96,7 @@ function upd(id,v){
   e.textContent=v;
 }
 
-/* القلوب */
+/* ❤️ القلوب */
 document.addEventListener("click",(e)=>{
   let h=document.createElement("div");
   h.className="heart";
