@@ -1,23 +1,23 @@
 body{
   margin:0;
   font-family:'Cormorant Garamond',serif;
-  background:url('bg.jpg') no-repeat center top;
+
+  background:url('bg.jpg') center center no-repeat;
   background-size:cover;
+  background-attachment:fixed;
+
   overflow-x:hidden;
 }
 
-html{
-  background:url('bg.jpg') no-repeat center top;
-  background-size:cover;
+/* للموبايل */
+@media (max-width:768px){
+  body{
+    background-attachment:scroll;
+  }
 }
 
 html[lang="ar"] body{
   font-family:'El Messiri', sans-serif;
-}
-
-html, body{
-  height:100%;
-  backface-visibility:hidden;
 }
 
 body.no-scroll{overflow:hidden;}
@@ -61,7 +61,7 @@ h1{
   transition:1s;
 }
 
-/* التعديل الوحيد: خط الاسم في العربي */
+/* الاسم في العربي نفس الخط */
 html[lang="ar"] h1{
   font-family:'El Messiri', sans-serif;
 }
