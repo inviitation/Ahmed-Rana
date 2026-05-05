@@ -9,13 +9,11 @@ let currentLang = "en";
 window.onload = () => {
   intro.style.display = "flex";
   main.style.display = "none";
-  document.body.classList.add("no-scroll");
 };
 
 intro.onclick = () => {
   intro.style.display = "none";
   main.style.display = "block";
-  document.body.classList.remove("no-scroll");
 
   fadeInMusic();
 
@@ -88,15 +86,10 @@ setInterval(()=>{
 function upd(id,v){
   let e=document.getElementById(id);
   v=Math.floor(v);
-  if(e.textContent!=v){
-    e.classList.add("animate");
-    setTimeout(()=>{
-      e.textContent=v;
-      e.classList.remove("animate");
-    },120);
-  }
+  e.textContent=v;
 }
 
+/* القلوب */
 document.addEventListener("click",(e)=>{
   let h=document.createElement("div");
   h.className="heart";
