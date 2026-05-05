@@ -11,6 +11,14 @@ html[lang="ar"] body{
   direction:ltr;
 }
 
+/* 👇 الحل الحقيقي لمشكلة توزيع العربي */
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] p{
+  direction:rtl;
+  text-align:center;
+}
+
 .overlay{
   position:fixed;
   inset:0;
