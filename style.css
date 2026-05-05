@@ -1,10 +1,14 @@
 body{
   margin:0;
   font-family:'Cormorant Garamond',serif;
-  background:url('bg.jpg') center/cover no-repeat;
-  background-attachment:scroll; /* تثبيت بدون مشاكل */
+  background:url('bg.jpg') no-repeat center top;
+  background-size:cover;
   overflow-x:hidden;
-  transform:none;
+}
+
+html{
+  background:url('bg.jpg') no-repeat center top;
+  background-size:cover;
 }
 
 html[lang="ar"] body{
