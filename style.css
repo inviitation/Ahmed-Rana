@@ -4,16 +4,9 @@ body{
 
   background:url('bg.jpg') center center no-repeat;
   background-size:cover;
-  background-attachment:fixed;
+  background-attachment:scroll;
 
   overflow-x:hidden;
-}
-
-/* للموبايل */
-@media (max-width:768px){
-  body{
-    background-attachment:scroll;
-  }
 }
 
 html[lang="ar"] body{
@@ -26,9 +19,9 @@ body.no-scroll{overflow:hidden;}
   position:fixed;
   inset:0;
   background:rgba(0,0,0,0.45);
-  backdrop-filter:blur(5px);
   z-index:0;
   pointer-events:none;
+  backdrop-filter:none; /* مهم */
 }
 
 .intro{
