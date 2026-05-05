@@ -5,8 +5,10 @@ body{
   overflow-x:hidden;
 }
 
+/* العربي نفس layout الإنجليزي */
 html[lang="ar"] body{
   font-family:'El Messiri', sans-serif;
+  direction:ltr;
 }
 
 .overlay{
@@ -58,7 +60,7 @@ h1,h2,p{
   color:#e0e0e0;
 }
 
-/* 👇 التعديل الوحيد */
+/* Wedding Invitation bold في الإنجليزي فقط */
 html[lang="en"] h2{
   font-weight:700;
 }
