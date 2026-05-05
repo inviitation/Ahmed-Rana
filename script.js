@@ -2,6 +2,9 @@ const intro = document.getElementById("intro");
 const main = document.getElementById("main");
 const music = document.getElementById("music");
 const btn = document.getElementById("musicBtn");
+const langBtn = document.getElementById("langBtn");
+
+let currentLang = "en";
 
 window.onload = () => {
   intro.style.display = "flex";
@@ -16,15 +19,15 @@ intro.onclick = () => {
 
   fadeInMusic();
 
-  requestAnimationFrame(() => {
-    document.querySelectorAll(".section").forEach((sec, i) => {
-      setTimeout(() => sec.classList.add("show"), i * 300);
-    });
-
-    setTimeout(() => {
-      document.querySelector("h1").classList.add("show");
-    }, 500);
+  document.querySelectorAll(".section").forEach((sec, i) => {
+    setTimeout(() => sec.classList.add("show"), i * 250);
   });
+
+  setTimeout(() => {
+    document.querySelector("h1").classList.add("show");
+  }, 400);
+
+  langBtn.style.display = "block";
 };
 
 function fadeInMusic(){
@@ -46,8 +49,30 @@ function fadeOutMusic(){
 }
 
 btn.onclick=()=>{
-  if(music.paused){fadeInMusic();btn.innerHTML="🔊";}
-  else{fadeOutMusic();btn.innerHTML="🔇";}
+  if(music.paused){
+    fadeInMusic();
+    btn.innerHTML="🔊";
+  }else{
+    fadeOutMusic();
+    btn.innerHTML="🔇";
+  }
+};
+
+langBtn.onclick = () => {
+  currentLang = currentLang === "en" ? "ar" : "en";
+
+  document.documentElement.lang = currentLang;
+
+  document.querySelectorAll("[data-en]").forEach(el => {
+    el.classList.add("fade");
+
+    setTimeout(() => {
+      el.innerHTML = el.getAttribute("data-" + currentLang);
+      el.classList.remove("fade");
+    }, 150);
+  });
+
+  langBtn.textContent = currentLang === "en" ? "AR" : "EN";
 };
 
 const t=new Date("May 14, 2026 20:00").getTime();

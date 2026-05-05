@@ -5,8 +5,8 @@ body{
   overflow-x:hidden;
 }
 
-@media (min-width:768px){
-  body{background-attachment:fixed;}
+html[lang="ar"] body{
+  font-family:'El Messiri', sans-serif;
 }
 
 body.no-scroll{overflow:hidden;}
@@ -17,6 +17,7 @@ body.no-scroll{overflow:hidden;}
   background:rgba(0,0,0,0.45);
   backdrop-filter:blur(5px);
   z-index:0;
+  pointer-events:none;
 }
 
 .intro{
@@ -119,11 +120,21 @@ span{color:#d4af37;}
   cursor:pointer;
 }
 
-.heart{
-  position:absolute;
-  color:#ff4d6d;
-  animation:float 1s forwards;
+#langBtn{
+  display:none;
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:9999;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  border:none;
+  padding:8px 12px;
+  border-radius:20px;
+  cursor:pointer;
 }
-@keyframes float{
-  to{transform:translateY(-80px);opacity:0;}
+
+.fade{
+  opacity:0;
+  transition:0.3s;
 }
