@@ -49,6 +49,12 @@ h1{
   transform:scale(.9);
   transition:1s;
 }
+
+/* 👇 التعديل الوحيد */
+html[lang="ar"] h1{
+  font-family:'El Messiri', sans-serif;
+}
+
 h1.show{opacity:1;transform:scale(1);}
 
 h1,h2,p{
